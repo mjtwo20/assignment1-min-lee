@@ -172,6 +172,13 @@ app.post("/loggingin", async (req, res) => {
 
     res.redirect("/members");
     return;
+  } else {
+    var html = `
+      Invalid email/password<br>
+      <a href="/login">Try again</a>
+    `;
+    res.send(html);
+    return;
   }
 });
 
